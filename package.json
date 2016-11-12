@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-modbus-tcp",
+  "version": "1.4.7",
+  "description": "Modbus Tcp Communication Plugin",
+  "cordova": {
+    "id": "cordova-plugin-modbus-tcp",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivnarayan123/cordova-plugin-modbus-tcp"
+  },
+  "keywords": [
+    "cordova",
+    "modbus",
+    "tcp",
+    "ble",
+    "arduino",
+    "ecosystem:cordova"
+  ],
+  "author": "ebw <info@ebw.co.in>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shivnarayan123/cordova-plugin-modbus-tcp/issues"
+  },
+  "homepage": "https://github.com/shivnarayan123/cordova-plugin-modbus-tcp#readme"
+}
