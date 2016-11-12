@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-modbus-tcp"
+    version="0.4.5">
+
+    <name>Modbus Tcp</name>
+    <description>Modbus Tcp Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>modbus, tcp</keywords>
+	<repo></repo>
+    <issue></issue>
+
+
+    <js-module src="www/modbusTcp.js" name="modbusTcp">
+        <clobbers target="window.modbusTcp" />
+    </js-module>
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="ModbusTcp">
+                <param name="android-package" value="com.ebw.cordova.ModbusClient"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/com/ebw/cordova/ModbusClient/ModbusClient.java"
+            target-dir="src/com/ebw/cordova/ModbusClient"/>
+			
+        <source-file src="src/android/com/ebw/cordova/ModbusClient/ReceiveDataChangedListener.java"
+			target-dir="src/com/ebw/cordova/ModbusClient"/>
+			
+		<source-file src="src/android/com/ebw/cordova/ModbusClient/SendDataChangedListener.java"
+            target-dir="src/com/ebw/cordova/ModbusClient"/>
+			
+        <source-file src="src/android/com/ebw/cordova/Exceptions/ConnectionException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+			
+		<source-file src="src/android/com/ebw/cordova/Exceptions/CRCCheckFailedException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+			
+        <source-file src="src/android/com/ebw/cordova/Exceptions/FunctionCodeNotSupportedException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+			
+		<source-file src="src/android/com/ebw/cordova/Exceptions/ModbusException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+			
+        <source-file src="src/android/com/ebw/cordova/Exceptions/QuantityInvalidException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+			
+		<source-file src="src/android/com/ebw/cordova/Exceptions/StartingAddressInvalidException.java"
+            target-dir="src/com/ebw/cordova/Exceptions"/>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+    </platform>
+</plugin>
